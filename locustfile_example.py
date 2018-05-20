@@ -16,7 +16,15 @@ class GetHomePageTask(TaskSet):
          Post /
         '''
         response=self.client.post("/post", {"username":"password"})
-
+ class GetAnotherTask(TaskSet):
+    @task()
+    def get_my_page(self):
+        '''
+        Calling sub domains
+        '''
+        self.client.get("/About")
+        
+        
 class WebsiteUser(HttpLocust):
     task_set = GetHomePageTask
     min_wait = 0
