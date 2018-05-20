@@ -20,7 +20,7 @@ class GetHomePageTask(TaskSet):
     @task()
     def get_my_page(self):
         '''
-        Calling sub domains
+        Invoking Sub Domains of the Base URL
         '''
         self.client.get("/About")
         
